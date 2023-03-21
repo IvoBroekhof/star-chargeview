@@ -51,6 +51,16 @@ function discreteBufferPlanningFast(desired: number[], chargeRequired: number, c
 }
 
 /**
+ * Stub implementation for the 'Balanced' charging mode
+ * @param desired
+ * @param chargeRequired
+ * @param chargingPowers
+ */
+function discreteBufferPlanningBalanced(desired: number[], chargeRequired: number, chargingPowers: number[]): number[] {
+    return []
+}
+
+/**
  * Computes an optimal profile with the requirements set.
  * @param desired           The desired profile from the EMS.
  * @param chargeRequired    The amount of charge the EV driver requires, in Wτ (τ = INTERVAL_LENGTH).
@@ -151,6 +161,9 @@ export function planEV(chargeRequired: number, endTime: [number, number], mode: 
             break;
         case ChargingMode.Smart:
             result = discreteBufferPlanningSmart(desired.slice(startInterval, endInterval), chargeRequired, chargingPowers);
+            break;
+        case ChargingMode.Balanced:
+            result = discreteBufferPlanningBalanced(desired.slice(startInterval, endInterval), chargeRequired, chargingPowers);
             break;
         case null:
             result = new Array<number>(Math.max(0, endInterval - startInterval)).fill(0);
