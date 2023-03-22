@@ -6,7 +6,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import {ChargingMode} from "../../data/models/ChargingMode";
 import {Button} from "reactstrap";
-import {MdOfflineBolt, MdWbSunny} from "react-icons/all";
+import {MdOfflineBolt, MdOutlineAccountBalance, MdWbSunny} from "react-icons/all";
 import { Container, Row, Col } from 'reactstrap';
 import '../../styles/schedule.scss';
 import { useFormContext } from 'react-hook-form';
@@ -66,13 +66,13 @@ export default function ModeSelector() {
                         <h4 className={"modeText"}>Solar Power</h4>
                     </Button>
                 </Col>
-                <Col className="balancedCol">
+                <Col className="balancedCol" >
                     <Button
                         className={balanced}
-                        onClick={() => setMode(ChargingMode.Balanced)}
-                        style={{borderTopRightRadius: "0", borderBottomRightRadius: "0"}}>
-                        <MdOfflineBolt className={"modeIcon"}/>
-                        <h4 className={"modeText"}>Balanced Charging</h4>
+                        onClick={() => setMode(ChargingMode.Balanced) }
+                        style={{borderTopLeftRadius: "0", borderBottomLeftRadius: "0"}}>
+                        <MdOutlineAccountBalance className={"modeIcon"}/>
+                        <h4 className={"modeText"}>Balanced Mode</h4>
                     </Button>
                 </Col>
             </Row>
