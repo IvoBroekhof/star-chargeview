@@ -26,3 +26,5 @@ yarn-error.log*
 /instrumented/
 /cypress/videos/tests/
 /.idea/
+/.expo/
+/.idea/

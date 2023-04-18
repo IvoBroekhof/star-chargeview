@@ -3,7 +3,7 @@
  * @module
  */
 import {ChargingMode} from "../../data/models/ChargingMode";
-import {getSolarPower, ChargingData, zipData, getIntervals} from "../../data/models/ChargingData";
+import {ChargingData, getIntervals, getSolarPower, zipData} from "../../data/models/ChargingData";
 
 // ---- BEGIN CONSTANTS ----
 
@@ -173,3 +173,4 @@ export function planEV(chargeRequired: number, endTime: [number, number], mode: 
 
     return zipData(getIntervals().slice(startInterval, endInterval), desired.slice(startInterval, endInterval), result);
 }
+
