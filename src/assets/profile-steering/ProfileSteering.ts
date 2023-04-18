@@ -1,4 +1,4 @@
-/**
+    /**
  * Plans the charging sessions based on the provided data to the functions.
  * @module
  */

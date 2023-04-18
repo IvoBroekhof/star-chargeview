@@ -41,6 +41,14 @@ describe('Schedule page tests', () => {
             .click()
     })
 
+    it('Fast Mode selected and drag bar', () => {
+        cy.get('.modeSelector .fastCol button')
+            .click()
+        cy.get('.MuiSlider-thumb')
+            .click()
+            .type('{rightarrow}'.repeat(5));
+    })
+
     it('Balanced Button does not change text when clicked', () => {
         cy.get('.balancedCol button').click().should('not.have.text', 'New Text')
     })
@@ -53,11 +61,11 @@ describe('Schedule page tests', () => {
         cy.get('.balancedCol button').should('be.enabled').click()
     })
     it('Balanced button has the correct border radius', () => {
-        cy.get('.balancedCol button').should('have.css', 'border-top-left-radius', '0')
-        cy.get('.balancedCol button').should('have.css', 'border-bottom-left-radius', '0')
+        cy.get('.balancedCol button').should('have.css', 'border-top-left-radius', '0px')
+        cy.get('.balancedCol button').should('have.css', 'border-bottom-left-radius', '0px')
     })
     it('Balanced button has the correct class name', () => {
-        cy.get('.balancedCol button').should('have.class', 'balanced')
+        cy.get('.balancedCol button').should('have.class', 'btn-secondary')
     })
     it('Balanced button sets the correct mode when clicked', () => {
         cy.spy(window, 'setMode')

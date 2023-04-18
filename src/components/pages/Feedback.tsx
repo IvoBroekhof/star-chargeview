@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 
 import '../../styles/feedback.scss';
 import '../../styles/lightMode.scss';
-import '../styled/Checkbox';
 import '../widgets/CustomRating';
 import '../styled/TextField';
 import CustomRating from '../widgets/CustomRating';
