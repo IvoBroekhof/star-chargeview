@@ -16,9 +16,9 @@ const ENERGY_CONSUMPTION : number = 194;
  * Converts to Wh based on ENERGY_CONSUMPTION.
  * @param km range in kms
  */
-export function kmToWh(km: number): number {
-    return km * ENERGY_CONSUMPTION;
-}
+// export function kmToWh(km: number): number {
+//     return km * ENERGY_CONSUMPTION;
+// }
 
 /**
  * Converts to km range based on ENERGY_CONSUMPTION.

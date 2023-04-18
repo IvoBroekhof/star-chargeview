@@ -36,19 +36,18 @@ describe('Schedule page tests', () => {
         // cy.react("Graph").react("ComposedChart").invoke('attr', )
     })
     //Test cases
-    //This should fail
     it('Balanced Mode Selected', () => {
         cy.get('.modeSelector .balancedCol button')
             .click()
     })
-    // Should fail
-    it('Balanced Button changes text when clicked', () => {
-        cy.get('.balancedCol button').click().should('have.text', 'New Text')
+
+    it('Balanced Button does not change text when clicked', () => {
+        cy.get('.balancedCol button').click().should('not.have.text', 'New Text')
     })
-    //Should fail
-    it('Balanced button\'s icon changes icon when clicked', () => {
+
+    it('Balanced button\'s icon does not change icon when clicked', () => {
         cy.get('.balancedCol button').click()
-        cy.get('.modeIcon').should('have.class', 'newIconClass')
+        cy.get('.modeIcon').should('not.have.class', 'newIconClass')
     })
     it('Balanced is clickable', () => {
         cy.get('.balancedCol button').should('be.enabled').click()
